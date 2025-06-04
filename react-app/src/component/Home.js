@@ -1,5 +1,8 @@
 import React from "react";
-import './Home.css'; // Import the CSS file for styling
+import './Home.css';
+import worldcupKeychain from '../images/worldcup keychain.jpeg';
+import purplevase from '../images/purplevase.jpeg'; // Asegúrate de tener esta imagen
+import organicer from '../images/organicer.jpeg'; // Asegúrate de tener esta imagen
 function Home() {
   return (
     <>
@@ -12,35 +15,44 @@ function Home() {
               <li><a href="#">Catálogo</a></li>
               <li><a href="#">Nosotros</a></li>
               <li><a href="#">Contacto</a></li>
+              <li><a href="#">Vender</a></li>
             </ul>
           </nav>
         </div>
       </header>
 
+      {/* 
       <section className="hero">
         <div className="hero-content">
           <h2>Diseños 3D Personalizados</h2>
           <p>Crea, personaliza e imprime lo que imagines.</p>
           <a href="#" className="btn">Ver productos</a>
         </div>
-        <div className="hero-image">
-          <img src="https://via.placeholder.com/400x400?text=Producto+3D" alt="Producto destacado" />
+        <div className="image-container">
+          <img src={worldcupKeychain} alt="Llaveros" />
         </div>
       </section>
+      */}
 
       <section className="highlights">
         <h3>Destacados de la Semana</h3>
         <div className="cards">
           <div className="card">
-            <img src="https://via.placeholder.com/250x250?text=Llaveros" alt="Llaveros" />
+            <div className="image-container">
+              <img src={worldcupKeychain} alt="Llaveros" />
+            </div>
             <h4>Llaveros</h4>
           </div>
           <div className="card">
-            <img src="https://via.placeholder.com/250x250?text=Lámparas" alt="Lámparas" />
-            <h4>Lámparas LED</h4>
+            <div className="image-container">
+              <img src={purplevase} alt="Jarrón violeta" />
+            </div>
+            <h4>Jarrón violeta</h4>
           </div>
           <div className="card">
-            <img src="https://via.placeholder.com/250x250?text=Decoración" alt="Decoración" />
+            <div className="image-container">
+              <img src={organicer} alt="Organizador de escritorio" />
+            </div>
             <h4>Decoración</h4>
           </div>
         </div>
