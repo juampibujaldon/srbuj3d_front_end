@@ -22,6 +22,9 @@ header {
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
+  width: 250px;
+  height: auto;
+  display: block;
 }
 header nav ul {
   list-style: none;
@@ -30,7 +33,7 @@ header nav ul {
 }
 header nav ul li a {
   text-decoration: none;
-  color: #333;
+  color: #ff6600; /* Naranja */
   transition: color 0.3s ease;
 }
 header nav ul li a:hover {
@@ -102,15 +105,20 @@ header .container {
 .hero-gallery .image-container {
   position: relative;
   transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s, z-index 0s;
+  background: #fff;
+  border-radius: 16px;
+}
+body.dark-mode .hero-gallery .image-container {
+  background: #232733;
+  border-radius: 16px;
 }
 
 .hero-gallery .image-container:hover {
   transform: scale(1.04) rotate(1deg) translateY(-1px);
   box-shadow: 0 4px 16px #0002;
-  z-index: 5; /* Solo un poco más alto que los z-index normales */
+  z-index: 5;
 }
 
-/* Mantén los z-index originales en cada imagen para el efecto de profundidad */
 .hero-gallery .image-container:nth-child(1) { z-index: 2; }
 .hero-gallery .image-container:nth-child(2) { z-index: 1; }
 .hero-gallery .image-container:nth-child(3) { z-index: 3; }
@@ -126,13 +134,20 @@ header .container {
   justify-content: center;
   transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
   box-shadow: 0 2px 12px #0001;
+  background: #fff;
+  border-radius: 16px;
+}
+body.dark-mode .image-container {
+  background: #232733;
+  border-radius: 16px;
 }
 
 .image-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: 16px !important;
+  background: transparent;
 }
 .logo-container {
   width: 150px;
@@ -140,12 +155,6 @@ header .container {
   display: flex;
   align-items: left;
   justify-content: center;
-}
-
-.logo {
-  width: 250px;
-  height: auto;
-  display: block;
 }
 
 .image-container:hover {
@@ -271,7 +280,8 @@ body.dark-mode {
 body.dark-mode header,
 body.dark-mode .navbar,
 body.dark-mode .hero,
-body.dark-mode .search-history-dropdown {
+body.dark-mode .search-history-dropdown,
+body.dark-mode footer {
   background: #232733;
   color: #f4f4f4;
 }
@@ -287,4 +297,33 @@ body.dark-mode .search-history-dropdown li {
 }
 body.dark-mode .search-history-dropdown li:hover {
   background: #232733;
+}
+body.dark-mode header nav ul li a {
+  color: #ff6600 !important;
+}
+body.dark-mode header nav ul li a:hover {
+  color: #ff6600 !important;
+}
+body.dark-mode .logo {
+  filter: invert(1) brightness(2) grayscale(1);
+}
+body.dark-mode footer {
+  background: #232733;
+  color: #f4f4f4;
+}
+
+/* Botón siempre naranja, sin cambio en hover */
+.btn {
+  background: #ff6600 !important;
+  color: #fff !important;
+  border: none;
+  border-radius: 0.7rem;
+  padding: 0.7rem 1.5rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: none;
+}
+.btn:hover {
+  background: #ff6600 !important;
 }
