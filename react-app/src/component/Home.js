@@ -78,15 +78,17 @@ function Home() {
               </div>
             )}
           </form>
+          {/* Botón hamburguesa fuera del nav para mejor control de posición */}
+          <button
+            className="menu-toggle"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+            type="button"
+            style={{ position: "absolute", top: 24, right: 32, zIndex: 200, background: "#fff" }}
+          >
+            {menuOpen ? <FiX /> : <FiMenu />}
+          </button>
           <nav>
-            <button
-              className="menu-toggle"
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label="Abrir menú"
-              type="button"
-            >
-              {menuOpen ? <FiX /> : <FiMenu />}
-            </button>
             <ul className={menuOpen ? "nav-links open" : "nav-links"}>
               <li><a href="#">Inicio</a></li>
               <li><a href="#">Catálogo</a></li>

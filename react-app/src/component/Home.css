@@ -17,7 +17,6 @@ body {
 header {
   background: white;
   padding: 1.5rem 0;
-  border-bottom: 1px solid #ddd;
 }
 .logo {
   font-size: 1.8rem;
@@ -33,7 +32,7 @@ header nav ul {
 }
 header nav ul li a {
   text-decoration: none;
-  color: #ff6600; /* Naranja */
+  color: #ff6600; 
   transition: color 0.3s ease;
 }
 header nav ul li a:hover {
@@ -45,7 +44,6 @@ header .container {
   align-items: center;
 }
 
-/* Hero: contenido a la izquierda, galería a la derecha */
 .hero {
   display: flex;
   justify-content: space-between;
@@ -170,7 +168,6 @@ body.dark-mode .image-container {
   gap: 2rem;
   padding: 1rem 2rem;
   background: #fff;
-  border-bottom: 1px solid #eee;
 }
 
 .navbar-logo {
