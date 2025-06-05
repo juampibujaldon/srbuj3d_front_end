@@ -11,6 +11,7 @@ import onimask from '../images/onimask.jpeg';
 import girl from '../images/girl.jpeg';
 import { CgDarkMode } from "react-icons/cg";
 
+
 function Home() {
   const [search, setSearch] = useState('');
   const [showHistory, setShowHistory] = useState(false);
@@ -46,7 +47,7 @@ function Home() {
             <input
               ref={inputRef}
               type="text"
-              placeholder="Search millions of Things"
+              placeholder="Buscar..."
               aria-label="Buscar"
               value={search}
               onChange={e => setSearch(e.target.value)}
@@ -98,7 +99,7 @@ function Home() {
 <section className="hero">
   <div className="hero-content">
     <h2>Diseños 3D Personalizados</h2>
-    <p>Crea, personaliza e imprime lo que imagines.</p>
+    <p>Crea, personaliza e imprimí lo que imaginás.</p>
     <a href="#" className="btn">Ver productos</a>
   </div>
   <div className="hero-gallery">
