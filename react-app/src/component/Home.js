@@ -10,16 +10,17 @@ import pokemonchess from '../images/pokemonchess.jpeg';
 import onimask from '../images/onimask.jpeg';
 import girl from '../images/girl.jpeg';
 import { CgDarkMode } from "react-icons/cg";
-
+import { FiMenu, FiX } from "react-icons/fi";
 
 function Home() {
   const [search, setSearch] = useState('');
   const [showHistory, setShowHistory] = useState(false);
   const [history, setHistory] = useState(["octopus", "organicer", "makeup", "vase"]);
+  const [menuOpen, setMenuOpen] = useState(false);
   const inputRef = useRef(null);
 
   const handleFocus = () => setShowHistory(true);
-  const handleBlur = () => setTimeout(() => setShowHistory(false), 150); // delay for click
+  const handleBlur = () => setTimeout(() => setShowHistory(false), 150);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -78,48 +79,58 @@ function Home() {
             )}
           </form>
           <nav>
-            <ul>
+            <button
+              className="menu-toggle"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Abrir menú"
+              type="button"
+            >
+              {menuOpen ? <FiX /> : <FiMenu />}
+            </button>
+            <ul className={menuOpen ? "nav-links open" : "nav-links"}>
               <li><a href="#">Inicio</a></li>
               <li><a href="#">Catálogo</a></li>
               <li><a href="#">Nosotros</a></li>
               <li><a href="#">Contacto</a></li>
               <li><a href="#">Vender</a></li>
-                          <button
-              className="dark-mode-toggle"
-              onClick={() => document.body.classList.toggle('dark-mode')}
-              type="button"
-            >
-              <CgDarkMode />
-            </button>
+              <li>
+                <button
+                  className="dark-mode-toggle"
+                  onClick={() => document.body.classList.toggle('dark-mode')}
+                  type="button"
+                >
+                  <CgDarkMode />
+                </button>
+              </li>
             </ul>
           </nav>
         </div>
       </header>
 
-<section className="hero">
-  <div className="hero-content">
-    <h2>Diseños 3D Personalizados</h2>
-    <p>Crea, personaliza e imprimí lo que imaginás.</p>
-    <a href="#" className="btn">Ver productos</a>
-  </div>
-  <div className="hero-gallery">
-    <div className="image-container">
-      <img src={lobosSTL} alt="Lobos STL" />
-    </div>
-    <div className="image-container">
-      <img src={mapamundiLOWPOLY} alt="Mapa Mundi Low Poly" />
-    </div>
-    <div className="image-container">
-      <img src={pokemonchess} alt="Pokemon Chess" />
-    </div>
-    <div className="image-container">
-      <img src={onimask} alt="Oni Mask" />
-    </div> 
-    <div className="image-container">
-      <img src={girl} alt="Girl STL" />
-    </div>   
-  </div>
-</section>
+      <section className="hero">
+        <div className="hero-content">
+          <h2>Diseños 3D Personalizados</h2>
+          <p>Crea, personaliza e imprimí lo que imaginás.</p>
+          <a href="#" className="btn">Ver productos</a>
+        </div>
+        <div className="hero-gallery">
+          <div className="image-container">
+            <img src={lobosSTL} alt="Lobos STL" />
+          </div>
+          <div className="image-container">
+            <img src={mapamundiLOWPOLY} alt="Mapa Mundi Low Poly" />
+          </div>
+          <div className="image-container">
+            <img src={pokemonchess} alt="Pokemon Chess" />
+          </div>
+          <div className="image-container">
+            <img src={onimask} alt="Oni Mask" />
+          </div>
+          <div className="image-container">
+            <img src={girl} alt="Girl STL" />
+          </div>
+        </div>
+      </section>
 
       <section className="highlights">
         <h3>Destacados de la Semana</h3>
