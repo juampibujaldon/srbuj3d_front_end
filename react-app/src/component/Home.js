@@ -11,6 +11,7 @@ import onimask from '../images/onimask.jpeg';
 import girl from '../images/girl.jpeg';
 import { CgDarkMode } from "react-icons/cg";
 import { FiMenu, FiX } from "react-icons/fi";
+import { TiThMenuOutline } from "react-icons/ti";
 
 function Home() {
   const [search, setSearch] = useState('');
@@ -85,8 +86,8 @@ function Home() {
             aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
             type="button"
             style={{ position: "absolute", top: 24, right: 32, zIndex: 200, background: "#fff" }}
-          >
-            {menuOpen ? <FiX /> : <FiMenu />}
+          > 
+            {menuOpen ? <FiX /> : <TiThMenuOutline />} {/* <-- Cambiado aquí */}
           </button>
           <nav>
             <ul className={menuOpen ? "nav-links open" : "nav-links"}>

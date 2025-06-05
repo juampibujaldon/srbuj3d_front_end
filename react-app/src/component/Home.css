@@ -136,7 +136,7 @@ body.dark-mode .hero-gallery .image-container {
   border-radius: 16px;
 }
 body.dark-mode .image-container {
-  background: #232733;
+  background: #000000;
   border-radius: 16px;
 }
 
@@ -279,11 +279,11 @@ body.dark-mode .navbar,
 body.dark-mode .hero,
 body.dark-mode .search-history-dropdown,
 body.dark-mode footer {
-  background: #232733;
+  background: #000000;
   color: #f4f4f4;
 }
 body.dark-mode .navbar-search {
-  background: #232733;
+  background: #000000;
   border-color: #555;
 }
 body.dark-mode .search-history-dropdown {
@@ -305,7 +305,7 @@ body.dark-mode .logo {
   filter: invert(1) brightness(2) grayscale(1);
 }
 body.dark-mode footer {
-  background: #232733;
+  background: #000000;
   color: #f4f4f4;
 }
 
@@ -375,5 +375,160 @@ body.dark-mode footer {
   }
   body.dark-mode .nav-links {
     background: #232733;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    width: 70vw;
+    height: 100vh;
+    background: #fff;
+    box-shadow: -2px 0 16px #0002;
+    padding-top: 5rem;
+    gap: 2.5rem;
+    align-items: center;      /* Centra horizontalmente */
+    justify-content: center;  /* Centra verticalmente */
+    transition: right 0.3s;
+    z-index: 110;
+    display: flex;
+  }
+  .nav-links.open {
+    right: 0;
+  }
+  body.dark-mode .nav-links {
+    background: #232733 !important; /* Fondo oscuro en modo oscuro */
+  }
+  .nav-links li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .dark-mode-toggle {
+    color: #ff6600 !important; /* Siempre visible */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* Asegura que el icono dark mode sea visible en ambos modos */
+.dark-mode-toggle {
+  color: #ff6600 !important;
+}
+
+/* Fuerza color naranja en links del menú */
+.nav-links li a {
+  color: #ff6600 !important;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.card, .seccion-destacados {
+  background-color: #f4f4f4; /* Color claro por defecto */
+  color: #222;               /* Texto oscuro por defecto */
+}
+
+body.dark-mode .card,
+body.dark-mode .seccion-destacados {
+  background-color: #e0e0e0; /* Color más claro en modo oscuro */
+  color: #181c24;            /* Texto más oscuro en modo oscuro */
+}
+.highlights h3 {
+  color: #222 !important; /* negro suave, visible en fondo blanco */
+}
+
+body.dark-mode .highlights h3 {
+  color: #fff !important; /* blanco en modo oscuro */
+}
+body.dark-mode {
+  background: #000 !important;
+}
+
+body.dark-mode .highlights,
+body.dark-mode .container {
+  background: #111111 !important;
+}
+.menu-toggle {
+  background: none !important; /* <-- Esto quita cualquier fondo */
+  border: none;
+  font-size: 2rem;
+  color: #ff6600;
+  cursor: pointer;
+  margin-left: 1rem;
+  box-shadow: none !important; /* Por si tiene sombra */
+}
+
+body.dark-mode .navbar-search input {
+  color: #fff !important;
+  background: transparent !important;
+  caret-color: #ff6600;
+}
+@media (max-width: 1100px) {
+  .hero {
+    padding: 3rem 0.5rem;
+  }
+  .hero-gallery {
+    gap: 2rem;
+  }
+  .hero-gallery .image-container {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    padding: 1.5rem 0.2rem;
+  }
+  .hero-gallery {
+    gap: 0.1rem;
+  }
+  .hero-gallery .image-container {
+    width: 120px;
+    height: 120px;
+  }
+  .hero-content h2 {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 700px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 0.5rem;
+    text-align: center;
+  }
+  .hero-content {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  .hero-content h2 {
+    font-size: 1.3rem;
+  }
+  .hero-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 90px);
+    gap: 1rem;
+    justify-items: center;
+    align-items: center;
+    min-width: unset;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .hero-gallery .image-container {
+    width: 90px;
+    height: 90px;
+    margin: 0;
+    transform: none !important;
   }
 }
