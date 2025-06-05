@@ -153,7 +153,7 @@ function Home() {
           <div className="card">
             <div className="image-container">
               <img src={organicer} alt="Organizador de escritorio" />
-            </div>
+            </div>S
             <h4>Decoración</h4>
           </div>
         </div>
@@ -171,7 +171,7 @@ function Home() {
         </div>
       </footer>
     </>
-  );
+  );  
 }
 
 export default Home;
