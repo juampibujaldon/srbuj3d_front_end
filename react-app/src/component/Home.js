@@ -12,6 +12,7 @@ import girl from '../images/girl.jpeg';
 import { CgDarkMode } from "react-icons/cg";
 import { FiMenu, FiX } from "react-icons/fi";
 import { TiThMenuOutline } from "react-icons/ti";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [search, setSearch] = useState('');
@@ -173,5 +174,5 @@ function Home() {
     </>
   );  
 }
-
+<a as={Link} to="/productos" className="btn">Ver productos</a>
 export default Home;
